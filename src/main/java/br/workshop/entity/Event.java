@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import java.util.Objects;
 import java.util.UUID;
 
-@Entity(name = "event")
+@Entity
 public class Event {
 
     public static EventBuilder builder() {
