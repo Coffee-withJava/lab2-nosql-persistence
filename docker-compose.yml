@@ -1,29 +1,27 @@
 version: '3'
 
 services:
-  postgres-compose:
+  postgres:
     image: postgres
     environment:
-      POSTGRES_PASSWORD: "Postgres2019!"
+      POSTGRES_PASSWORD: "postgres"
     ports:
       - "15432:5432"
-    volumes:
-      - /home/gabriel/workshop/docker-compose/PostgreSQL:/var/lib/postgresql/data
     networks:
-      - postgres-compose-network
+      - postgres-network
 
-  pgadmin-compose:
+  pgadmin:
     image: dpage/pgadmin4
     environment:
       PGADMIN_DEFAULT_EMAIL: "workshop@workshop.com"
-      PGADMIN_DEFAULT_PASSWORD: "PgAdmin2019!"
+      PGADMIN_DEFAULT_PASSWORD: "postgres"
     ports:
       - "16543:80"
     depends_on:
-      - postgres-compose
+      - postgres
     networks:
-      - postgres-compose-network
+      - postgres-network
 
 networks:
-  postgres-compose-network:
+  postgres-network:
     driver: bridge

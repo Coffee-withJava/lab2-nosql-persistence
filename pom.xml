@@ -48,14 +48,25 @@
                 <plugin>
                     <groupId>io.openliberty.tools</groupId>
                     <artifactId>liberty-maven-plugin</artifactId>
-                    <version>3.10</version>
+                    <version>3.10.1</version>
                     <configuration>
                         <runtimeArtifact>
                             <groupId>io.openliberty.beta</groupId>
                             <artifactId>openliberty-runtime</artifactId>
-                            <version>24.0.0.3-beta</version>
+                            <version>23.0.0.12-beta</version>
                             <type>zip</type>
                         </runtimeArtifact>
+                        <copyDependencies>
+                            <dependencyGroup>
+                                <location>jdbc</location>
+                                <dependency>
+                                    <groupId>org.postgresql</groupId>
+                                    <artifactId>postgresql</artifactId>
+                                    <version>42.2.9</version>
+                                    <type>jar</type>
+                                </dependency>
+                            </dependencyGroup>
+                        </copyDependencies>
                     </configuration>
                 </plugin>
             </plugins>
