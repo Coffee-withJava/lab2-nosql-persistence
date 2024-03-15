@@ -1,27 +1,21 @@
 version: '3'
 
 services:
-  postgres:
-    image: postgres
+  mongo:
+    image: mongo
+    restart: always
     environment:
-      POSTGRES_PASSWORD: "postgres"
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
     ports:
-      - "15432:5432"
-    networks:
-      - postgres-network
+      - 27017:27017
 
-  pgadmin:
-    image: dpage/pgadmin4
+  mongo-express:
+    image: mongo-express:1.0.0-alpha
+    restart: always
+    ports:
+      - 8081:8081
     environment:
-      PGADMIN_DEFAULT_EMAIL: "workshop@workshop.com"
-      PGADMIN_DEFAULT_PASSWORD: "postgres"
-    ports:
-      - "16543:80"
-    depends_on:
-      - postgres
-    networks:
-      - postgres-network
-
-networks:
-  postgres-network:
-    driver: bridge
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/

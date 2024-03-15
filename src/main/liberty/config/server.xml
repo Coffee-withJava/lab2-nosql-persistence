@@ -49,7 +49,7 @@
     <applicationManager autoExpand="true"/>
 
     <!-- Configures the application on a specified context root -->
-    <webApplication contextRoot="/pokemon-openliberty" location="pokemon-openliberty.war"/>
+    <webApplication contextRoot="/lab2-nosql-persistence" location="lab2-nosql-persistence.war"/>
 
     <!-- Default SSL configuration enables trust for default certificates from the Java runtime -->
     <ssl id="defaultSSLConfig" trustDefaultCerts="true"/>
