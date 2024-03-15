@@ -4,7 +4,6 @@
     <!-- Enable features -->
     <featureManager>
         <feature>jakartaee-10.0</feature>
-        <feature>data-1.0</feature>
         <feature>microProfile-6.1</feature>
     </featureManager>
 
