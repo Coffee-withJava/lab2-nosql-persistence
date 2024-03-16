@@ -10,10 +10,4 @@ public record ShoppingCartResponse(@Schema Long customerId,
                                    @Schema List<ItemShoppingCartResponse> items,
                                    @Schema BigDecimal total) {
 
-    public static ShoppingCartResponse of(ShoppingCart shoppingCart) {
-        return new ShoppingCartResponse(
-                shoppingCart.customerId(),
-                shoppingCart.items().stream().map(ItemShoppingCartResponse::of).toList(),
-                shoppingCart.total());
-    }
 }

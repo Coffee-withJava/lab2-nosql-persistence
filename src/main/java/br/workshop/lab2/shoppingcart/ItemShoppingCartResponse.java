@@ -11,10 +11,4 @@ public record ItemShoppingCartResponse(@Schema String productId,
                                        @Schema Integer quantity,
                                        @Schema BigDecimal total) {
 
-    public static ItemShoppingCartResponse of(ItemShoppingCart itemShoppingCart) {
-        return new ItemShoppingCartResponse(itemShoppingCart.productId(),
-                itemShoppingCart.productName(),
-                itemShoppingCart.productPrice(),
-                itemShoppingCart.quantity(), itemShoppingCart.total());
-    }
 }
