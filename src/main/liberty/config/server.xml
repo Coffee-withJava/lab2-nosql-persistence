@@ -7,19 +7,6 @@
         <feature>microProfile-6.1</feature>
     </featureManager>
 
-    <library id="jdbcLib">
-        <fileset dir="jdbc" includes="*.jar"/>
-    </library>
-
-    <dataSource id="DefaultDataSource" jndiName="jdbc/myDB">
-        <jdbcDriver libraryRef="jdbcLib"/>
-        <properties serverName="localhost"
-                    portNumber="15432"
-                    databaseName="postgres"
-                    user="postgres"
-                    password="postgres"/>
-    </dataSource>
-
     <!-- This template enables security. To get the full use of all the capabilities, a keystore and user registry are required. -->
 
     <!-- For the keystore, default keys are generated and stored in a keystore. To provide the keystore password, generate an 
